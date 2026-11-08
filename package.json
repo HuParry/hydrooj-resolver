@@ -1,6 +1,6 @@
 {
   "name": "hydrooj-resolver",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ACM contest scoreboard resolver plugin for Hydro OJ",
   "repository": {
     "type": "git",

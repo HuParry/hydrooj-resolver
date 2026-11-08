@@ -2,7 +2,7 @@
 import {
   addPage, NamedPage, React, ReactDOM,
 } from '@hydrooj/ui-default';
-import { animated, easings, useSprings } from '@react-spring/web';
+import { animated, useSprings } from '@react-spring/web';
 import useKey from 'react-use/lib/useKey';
 import { ResolverInput } from '../interface';
 
@@ -180,7 +180,9 @@ export function start(data: ResolverInput, options: DisplaySettings) {
           shadow: 1,
           immediate: (key: string) => key === 'zIndex',
           config: {
-            easing: easings.steps(5),
+            // Slow the default spring by about 20% with similar damping.
+            tension: 120,
+            friction: 22,
           },
         })));
       },

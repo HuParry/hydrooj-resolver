@@ -42,11 +42,17 @@
 1. 更新 `package.json` 的版本号，例如 `1.0.1`。
 2. 同步更新 `templates/resolver.html` 的页脚版本和 CSS 资源版本。
 3. 提交并推送代码到 GitHub。
-4. 在 GitHub Releases 创建正式 Release，标签为对应的 `v1.0.1`，指向上述提交。
-5. `.github/workflows/publish.yml` 自动检查版本、安装依赖、测试并发布到 npm。
+4. 创建并推送对应版本的标签：
+
+   ```bash
+   git tag v1.0.1
+   git push origin v1.0.1
+   ```
+
+5. `.github/workflows/publish.yml` 自动检查版本、安装依赖、测试并发布到 npm，成功后创建对应的 GitHub Release。
 
 标签必须是 `v` 加包版本。同一个 npm 版本不能重复发布；首次本地发布 `1.0.0` 后，下一次自动发布应使用新的版本。
-草稿和预发布 Release 不会发布到 npm。
+只推送代码不会发布；推送版本标签才会触发发布。当前工作流仅支持正式版本，不发布预发布版本。
 
 发布完成后，用户可执行 `hydrooj install hydrooj-resolver` 安装，再重启 Hydro。
 
