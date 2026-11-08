@@ -22,12 +22,16 @@
     "README.md",
     "LICENSE"
   ],
-  "publishConfig": { "access": "public" },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "engines": { "node": ">=22" },
   "dependencies": { "@react-spring/web": "10.0.3", "react-use": "17.6.0" },
   "devDependencies": { "esbuild": "0.25.2" },
   "scripts": {
     "test": "node --test test/*.test.*",
-    "prepublishOnly": "npm test"
+    "check:publish": "npm test && npm pack --dry-run",
+    "prepublishOnly": "npm run check:publish"
   }
 }
