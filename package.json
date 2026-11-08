@@ -1,0 +1,33 @@
+{
+  "name": "hydrooj-resolver",
+  "version": "1.0.0",
+  "description": "ACM contest scoreboard resolver plugin for Hydro OJ",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HuParry/hydrooj-resolver.git"
+  },
+  "homepage": "https://github.com/HuParry/hydrooj-resolver#readme",
+  "bugs": {
+    "url": "https://github.com/HuParry/hydrooj-resolver/issues"
+  },
+  "main": "index.ts",
+  "license": "AGPL-3.0",
+  "keywords": ["hydrooj", "hydro", "plugin", "acm", "scoreboard", "resolver"],
+  "files": [
+    "index.ts",
+    "interface.ts",
+    "frontend/resolver.page.tsx",
+    "templates/resolver.html",
+    "public/resolver/resolver.css",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": { "access": "public" },
+  "engines": { "node": ">=22" },
+  "dependencies": { "@react-spring/web": "10.0.3", "react-use": "17.6.0" },
+  "devDependencies": { "esbuild": "0.25.2" },
+  "scripts": {
+    "test": "node --test test/*.test.*",
+    "prepublishOnly": "npm test"
+  }
+}
