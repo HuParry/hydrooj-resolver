@@ -10,31 +10,29 @@ Hydro OJ 的 ACM 比赛滚榜插件，适用于已结束且设置了封榜时间
 
 仅比赛所有者或拥有“查看隐藏榜单”权限的用户可使用。
 
-## 安装
+## 作为 Hydro 插件安装
 
-需要 Node.js 22+ 和 Yarn 1.x，使用运行 Hydro 的用户执行：
+使用运行 Hydro 的用户执行：
 
 ```bash
-hydrooj addon create
-git clone https://github.com/HuParry/hydrooj-resolver.git ~/.hydro/addons/hydrooj-resolver
-cd ~/.hydro/addons/hydrooj-resolver
-yarn install
-hydrooj addon add "$PWD"
+hydrooj install hydrooj-resolver
 pm2 restart hydrooj
 ```
 
-## 更新
+安装完成后会自动注册插件，重启 Hydro 即可使用。
+
+## 更新插件
+
+重新执行安装命令即可更新：
+
 ```bash
-cd ~/.hydro/addons/hydrooj-resolver
-git pull
+hydrooj install hydrooj-resolver
+pm2 restart hydrooj
 ```
 
 ## 卸载
 
 ```bash
-hydrooj addon remove "$HOME/.hydro/addons/hydrooj-resolver"
+hydrooj uninstall hydrooj-resolver
 pm2 restart hydrooj
-rm -rf "$HOME/.hydro/addons/hydrooj-resolver"
 ```
-
-若安装路径或 Hydro 进程名称不同，请替换为实际值。
